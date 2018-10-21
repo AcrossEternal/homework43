@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-cmn">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+    padding:0px;
+    margin:0px;
+    font-family:"微软雅黑";
+}
+#header
+{
+    height:100px;
+    border:solid 1px red;
+    margin:0px auto;
+}
+#main
+{
+    margin:10px auto;
+    height:400px;
+}
+#footer
+{
+    margin:0px auto;
+    height:100px;
+    border:solid 1px red;
+}
+@media screen and (min-width:900px)
+{
+    body{
+			background: lightseagreen;
+		}
+    #header,#footer
+    {
+        background: blue;
+        width:800px;
+    }
+    #main
+    {
+        width:800px;
+        height:400px;
+    }
+    #main-left
+    {
+        width:200px;
+        height:400px;
+        border:solid 1px red;
+        float:left;  /*以下均要设置左浮动，保证在同一行*/
+    }
+    #main-center
+    {
+        width:394px;
+        height:400px;
+        border:solid 1px red;
+        float:left;
+    }
+    #main-right
+    {
+        width:200px;
+        height:400px;
+        border:solid 1px red;
+        float:left;
+    }
+}
+@media screen and (min-width:600px) and (max-width:900px)
+{
+    body{
+			background: pink;
+		}
+    #header,#footer
+    {
+        background: gold;
+        width:600px;
+    }
+    #main
+    {
+        width:600px;
+        height:400px;;
+    }
+    #main-left
+    {
+        width:200px;
+        height:400px;
+        border:solid 1px red;
+        float:left;
+    }
+    #main-center
+    {
+        width:396px;
+        height:400px;
+        border:solid 1px red;
+        float:left;
+    }
+    #main-right
+    {
+        display:none; 
+    }
+}
+@media screen and (max-width:600px)
+{
+    body{
+			background: lightsteelblue;
+		}
+    #header,#footer
+    {
+        background: salmon;
+        width:300px;
+    }
+    #main
+    {
+        width:300px;
+        height:400px;
+    }
+    #main-left
+    {
+        display:none; 
+    }
+    #main-center
+    {
+        width:300px;
+        height:400px;
+        border:solid 1px red;
+    }
+    #main-right
+    {
+        display:none; 
+    }
+}
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>
+            我来组成头部
+        </h1>
+    </div>
+    <div id="main">
+       <div id="main-left"><h3>我是左护法</h3></div>
+       <div id="main-center"><h2>我是核心</h2></div>
+       <div id="main-right"><h3>我是右护法</h3></div>
+    </div>
+    <div id="footer">
+        <h1>
+            我来组成尾部
+        </h1>
+    </div>
+    <a href="index.html">返回</a>
+  </body>
+</body>
+</html>
