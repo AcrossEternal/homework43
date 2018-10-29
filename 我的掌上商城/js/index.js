@@ -33,3 +33,4 @@ function search(){
         searchBox.style.background="rgba(201,21,35,"+opacity+")";
     }
 }
+// 轮播图
