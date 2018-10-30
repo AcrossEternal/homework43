@@ -1,0 +1,59 @@
+html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code
+{margin:0;
+padding:0;}
+
+body{
+font:12px/1.5"Microsoft yahei",arial;
+color:#333;
+background-color: #FFF;
+}
+ul{
+    list-style: none;
+}
+.cl{
+    clear:both;
+}
+.mod
+{
+    width: 944px;
+    margin: 20x auto;
+}
+.mod:after{
+    content: "";
+    display:block;
+    clear: both;
+    overflow: hidden;
+}
+.mod.top{
+    height: 54px;
+    background-color: #444;
+}
+.mod.mod-content{
+    height: 312px;
+    border:1px solid #e0e0e0;
+    border-top-width: 0px;
+}
+.mod.left{
+    height: 312px;
+    float: left;
+    width: 182px;
+    background-color: rgb(85, 85, 85);
+}
+.mod.right{
+    height: 312px;
+    float: left;
+    /* width: 759px; */
+    padding: 12px 17px 13px 15px;
+    /* background-color: #666; */
+}
+.mod.right.select:first-child{
+    width: 37px;
+    height: 16px;
+    background-color: blue;
+    border-radius: 2px;
+    color: #FFF;
+    font-size: 10px;
+    text-align: center;
+    line-height: 16px;
+    font-weight: bold;
+}

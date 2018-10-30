@@ -33,4 +33,28 @@ function search(){
         searchBox.style.background="rgba(201,21,35,"+opacity+")";
     }
 }
-// 轮播图
+// 轮播
+var imagesA=document.getElementById('images').children;
+var currentNo=0;
+function changeImg(){
+    for(var i=0;i<imagesA.length;i++){
+        imagesA[i].className="hiddenImg";
+        console.log(imagesA[i]);
+    }
+    imagesA[currentNo].className="displayImg";
+    if(currentNo<7){currentNo++;}
+    else{
+        currentNo=0;
+    }
+}
+
+var img=document.getElementById('images')
+images.addEventListener('mouseover',stopChange);
+images.addEventListener('mouseout',startChange);
+var timer=window.setInterval(changeImg,1000)
+function stopChange(){
+    window.clearInterval(timer);
+}
+function startChange(){
+     timer=window.setInterval(changeImg,1000)
+}
