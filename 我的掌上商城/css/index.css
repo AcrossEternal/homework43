@@ -59,6 +59,7 @@
 }
 /* 轮播 */
 
+
 html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, em, button {
     margin: 0;
     padding: 0;
@@ -66,123 +67,53 @@ html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form
 ul{
     list-style: none;
 }
-.arrow{
-	position: absolute;  
-	top: 110px; 	  
-    width: 19px;
-    height: 40px;
-    cursor: pointer;   
-    background-repeat: no-repeat;
-    background-position: center;
-    z-index:2;  
-}
-.pic{ 
-    position: absolute;
-    top:0;
-    left:0;
-    transition: opacity 1s linear;   
-    z-index: 2;
 
-}
-.opacity0{opacity:0;}
-.opacity1{opacity:1;}
-
-.txtItems{    
-    position: absolute;
-    z-index:2; 
-    left:0;
-    cursor: pointer;
-    color: #fff;
+.slider{
     width: 100%;
+    height: 300px;
+    margin: 0 auto;
+    position: relative;
     overflow: hidden;
-    transition: height 0.25s linear;
 }
 
-.shorten{
-    bottom: 0px;
-    height: 5px;
+#images{
+    /* position: relative;
+    background-color:red; */
+    width: 100%;
+   
 }
 
-.heighten{
-    bottom: 0px;
-    height: 50px;
-}
-
-.txtItems:hover{
-   bottom: 0px;
-   height: 50px;
-}
-
-.txtItemsLi{
-    text-align: center;
-    width: 11.45%; 
-    padding: 0.5%;
-    margin-right: 0.05%;
-    background-color:#333; 
-    opacity: 0.5;   
-    float: left;   
-   transition: opacity 0.25s linear;
-
-}
-.txtItemsLi:hover{
-    background-color: #FF8C00;
-    opacity: 1;
-
-}
-
-.currentTxt{
-    background-color: #FF8C00;
-    opacity: 1;
-}
-
-
-.txtItemsLi span{
-    display: block;
-    text-align: center;
-    font-weight: bold;
-    overflow: hidden;
+#images>a{
+    transition:  opacity 1s linear;
+    /* display: block; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 .displayImg{
-    display:block;
+    /* display: block; */
     opacity: 1;
 }
+
 .hiddenImg{
-    display:none;
-    opacity: 0;
+ /* display: none; */
+ opacity: 0;
 }
 img{
     transition: opacity 1s linear;
     opacity: 1;
-    width: 100%;
-    height: 100%;
-
-}
-#images{
-    /* position: relative; */
-    width: 100%;
-}
-#images>a{
-    transition: opacity 1s linear;
-    display: block;
-    position: absolute;
-    top:0;
-    left: 0;}
-.slider{
-    width:100%;
-    height: 300px;
+    width:  100%;
+    height: 300px;    
     margin: 0 auto;
-    position:relative;
-    overflow: hidden;
 }
-.slider img{
-    display: block;
-}
+
 .btn{
-    position:absolute;
-    top: 60%;
-    width: 50px; 
+    position: absolute;
+    top:50%;
+    width: 60px;
     height: 30px;
-    background-color:#000;
+    background-color: #000;
     opacity: 0.3;
     color: #fff;
     cursor: pointer;
@@ -190,39 +121,47 @@ img{
     line-height: 30px;
     background-position: center;
 }
+
 .rightButton{
-    right: 20px;
+    right:20px;
 }
+
 .leftButton{
-    left: 20px;
+    left:20px;
 }
+
 .txt-box{
     width: 100%;
     /* background-color: #000; */
     /* opacity: 0.3; */
-    height: 40px;
-    position: absolute;
+    height:5px;
+    position: absolute;    
     left: 0;
     bottom: 0;
     display: flex;
     z-index: 5;
-    transition: height 1s linear 0s;
+    transition: height 0.1s linear 0s;
 }
-.txt-box :hover{
+
+.txt-box:hover{
     height: 40px;
 }
-.txt-box li{
+
+.txtItem{
     width: 12.5%;
-    background-color: #333;
     margin-right: 2px;
     color: #fff;
-    text-align: center;
+    text-align: center;    
 }
-.txt-box li:hover{
-    background-color: rgb(252,164,2,0.829);
+.txtItem:last-child{
+    margin:0;
 }
-.txt-box:last-child{
-    margin: 0;
+
+.txtItem:hover,.heighlightColor{
+    background-color:rgb(252, 164, 2);
+}
+.normalColor{
+    background-color:rgba(0,0,0,0.5);
 }
 
 /* 导航栏模块 */
@@ -253,4 +192,127 @@ img{
     color:#666;
     font-size:12px;
     padding: 6px 0;
+}
+
+/* 商品主盒子 */
+.hm_product{
+    padding:0 5px;
+}
+.hm_product>.product_box{
+    width: 100%;
+    background-color: #fff;
+    margin-top:10px;
+    box-shadow: 0 0 1px #e0e0e0;
+}
+.hm_product>.product_box>.hm_product_box_tit{
+    height: 32px;
+    line-height: 32px;
+    border-bottom: 1px solid #e0e0e0;
+}
+.hm_product>.product_box>.hm_product_box_tit.no_border{
+    border-bottom:none;
+}
+.hm_product>.product_box>.hm_product_box_tit>h3{
+    font-weight: normal;
+    font-size: 15px;
+    padding-left: 20px;
+    position: relative;
+    color: #666;
+}
+.hm_product>.product_box>.hm_product_box_tit>h3::before{
+    /* 
+        display block position: absolute float left
+    */
+    content: "";
+    position: absolute;
+    top: 10px;
+    left:10px;
+    width: 3px;
+    height: 12px;
+    background: :#d8505c;
+}
+/* 掌上秒杀 second kill */
+.hm_sk{}
+.hm_sk.sk_icon{
+    background: url("../images/时间.png")no-repeat;
+    background-size: 16px 20px;
+    width: 16px;
+    height: 20px;
+    float: left;
+    margin-top: 6px;
+}
+.hm_sk.sk_name{
+    color:#d8505c;
+    font-size: 15px;
+    float: left;
+}
+.hm_sk.sk_time{
+    float: left;
+    margin-top:8px;
+}
+.hm_sk.sk_time>span{
+    float:left;
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    text-align: center;
+    background:#333;
+    color:#fff;
+    margin-left: 3px;
+}
+.hm_sk.sk_time>span:nth-child(3n){
+    background: #fff;
+    color: #333;
+    width: 5px;
+}
+
+.hm_sk.product_boxcon>ul{
+    width: 100%;
+    font-size: 12px;
+    padding: 10px 0;
+}
+.hm_sk.product_box_con>ul>li{
+    width: 33.333%;
+    float: left;
+    text-align: center;
+}
+.hm_sk.product_box_con>ul>li>a{
+    border-right:0;
+}
+.hm_sk.product_box_con>ul>li>a>img{
+    width: 64%;
+    display: block;
+    margin: 0 auto;
+}
+/* 
+E:first-of-type 选择E同类的同级的第一个元素
+E:last-of-type 选择E同类的同级的最后个元素
+E:nth-of-type(n) 选择E同类型的统计的第n个元素
+*/
+.hm_sk.product_box_con>ul>li>p:first-of-type{
+    color: #d8505c;
+    padding-top:5px;
+}
+.hm_sk.product_box_con>ul>li>p:last-of-type{
+    text-decoration: line-through;   /*删除线*/
+    color: #666;
+    padding-top: 5px;
+}
+/* 组合样式 */
+.w_50{
+    width: 50%;
+    display: block;
+}
+.w_50>img{
+    display: block;
+    width: 100%;
+}
+.b_left{
+    border-left:1px solid #ee00ee;
+}
+.b_right{
+    border-right: 1px solid #e0e0e0;
+}
+.b_bottom{
+    border-bottom: 1px solid #e0e0e0;
 }
