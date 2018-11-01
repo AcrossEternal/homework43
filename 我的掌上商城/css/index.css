@@ -58,16 +58,6 @@
     left: 85px;
 }
 /* 轮播 */
-
-
-html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, em, button {
-    margin: 0;
-    padding: 0;
-}
-ul{
-    list-style: none;
-}
-
 .slider{
     width: 100%;
     height: 300px;
