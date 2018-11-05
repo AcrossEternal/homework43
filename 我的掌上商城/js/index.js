@@ -76,7 +76,7 @@ function rightImg() {
     }  
 }
 
-
+// 轮播
 
 //网页加载后启动定时器，每隔1秒调用changeImgGo（）换片
 var timer = window.setInterval(rightImgGo, 1000);
@@ -134,33 +134,27 @@ function rightImgGo(){
     rightImg();
     changeImg();
 }
-// // 倒计时
-// function downTime(){
-//     // 需要倒计时的时间
-//     var time=5*60*60;
-//     var timer=null;
-//     // 操作dom
-//     var skTime=document.querySelector('.sk_time');
-//     // 所有的SPAN
-//     var spans=skTime.querySelectorAll('span');
-//     timer=setInterval(function){
-//         if(time<=0){
-//             clearInterval(timer);
-//             return false;
-//         }
-//         time --;
-//         // 格式化
-//         var h=Math.floor(time/3600);
-//         var m=Math.floor(time%3600/60);
-//         var s=time%60;
-//         console.log(h);
-//         console.log(m);
-//         console.log(s);
-//         spans[0].innerHTML=Math.floor(h/10);
-//         spans[1].innerHTML=h%10;
-//         spans[3].innerHTML=Math.floor(m/10);
-//         spans[4].innerHTML=m%10;
-//         spans[6].innerHTML=Math.floor(s/10);
-//         spans[7].innerHTML=s%10;
-//     },1000);
-// }
+
+// 倒计时
+// 倒计时日期
+var countDownDate = new Date("Dec 1, 2018 15:37:25").getTime();
+
+// 每秒更新一次
+var x = setInterval(function() {
+
+    // 获取今天的时间
+    var now = new Date().getTime();
+    
+    // 现在和倒计时之差
+    var distance = countDownDate - now;
+    
+    // 时间计算
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    document.getElementById("tie").innerHTML = days + "天 " + hours + "时 "
+    + minutes + "分 " + seconds + "秒 ";
+    
+}, 1000);
