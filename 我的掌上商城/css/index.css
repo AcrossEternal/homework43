@@ -154,6 +154,7 @@ img{
     background-color:rgba(0,0,0,0.5);
 }
 
+
 /* 导航栏模块 */
 .hm_nav{
     width: 100%;
@@ -183,6 +184,7 @@ img{
     font-size:12px;
     padding: 6px 0;
 }
+
 
 /* 商品主盒子 */
 .hm_product{
@@ -219,90 +221,42 @@ img{
     left:10px;
     width: 3px;
     height: 12px;
-    background: :#d8505c;
-}
-/* 掌上秒杀 second kill */
-.hm_sk{}
-.hm_sk.sk_icon{
-    background: url("../images/时间.png")no-repeat;
-    background-size: 16px 20px;
-    width: 16px;
-    height: 20px;
-    float: left;
-    margin-top: 6px;
-}
-.hm_sk.sk_name{
-    color:#d8505c;
-    font-size: 15px;
-    float: left;
-}
-.hm_sk.sk_time{
-    float: left;
-    margin-top:8px;
-}
-.hm_sk.sk_time>span{
-    float:left;
-    width: 15px;
-    height: 15px;
-    line-height: 15px;
-    text-align: center;
-    background:#333;
-    color:#fff;
-    margin-left: 3px;
-}
-.hm_sk.sk_time>span:nth-child(3n){
-    background: #fff;
-    color: #333;
-    width: 5px;
+    background: #d8505c;
 }
 
-.hm_sk.product_boxcon>ul{
+/* 倒计时 */
+.p.tie {
+    text-align: center;
+    font-size: 30px;
+  }
+
+
+  /* 布局 */
+  .ad_con{
     width: 100%;
-    font-size: 12px;
+    background: #fff;
+    border-bottom:1px solid #e0e0e0;
+}
+.ad_con>ul{
+    width: 100%;
     padding: 10px 0;
 }
-.hm_sk.product_box_con>ul>li{
-    width: 33.333%;
-    float: left;
-    text-align: center;
+.ad_con>ul>li{
+    width: 25%;
+    float:left;
 }
-.hm_sk.product_box_con>ul>li>a{
-    border-right:0;
+.ad_con>ul>li>a{
+    display: block;
 }
-.hm_sk.product_box_con>ul>li>a>img{
-    width: 64%;
+.ad_con>ul>li>a>img{
+    width: 200px;
+    height: 200px;
     display: block;
     margin: 0 auto;
 }
-/* 
-E:first-of-type 选择E同类的同级的第一个元素
-E:last-of-type 选择E同类的同级的最后个元素
-E:nth-of-type(n) 选择E同类型的统计的第n个元素
-*/
-.hm_sk.product_box_con>ul>li>p:first-of-type{
-    color: #d8505c;
-    padding-top:5px;
-}
-.hm_sk.product_box_con>ul>li>p:last-of-type{
-    text-decoration: line-through;   /*删除线*/
-    color: #666;
-    padding-top: 5px;
-}
-/* 组合样式 */
-.w_50{
-    width: 50%;
-    display: block;
-}
-.w_50>img{
-    display: block;
-    width: 100%;
-}
-.b_left{
-    border-left:1px solid #ee00ee;
-}
-.b_right{
-    border-right: 1px solid #e0e0e0;
-}
-.b_bottom{
-    border-bottom: 1px solid #e0e0e0;
+.ad_con>ul>li>a>p{
+    text-align: center;
+    color:#666;
+    font-size:15px;
+    padding: 6px 0;
 }
