@@ -1,26 +1,26 @@
 <script>
-  function Person(name, age) {
-    this.name = name;                // 添加name属性
-    this.age = age;                  // 添加age属性
-    this.sayHello = function () {    // 添加sayHello()方法
-      console.log('你好，我是' + this.name);
-    };
-  }
-  var p1 = new Person('张三', 18);
-  var p2 = new Person('李四', 19);
-  console.log(p1);                  // 输出结果：Person {name: "张三", age: 18}
-  console.log(p2);                  // 输出结果：Person {name: "李四", age: 19}
-  p1.sayHello();                    // 输出结果：你好，我是 张三
-  console.log(p1.constructor);      // 输出结果：function Person(name, age) ……
+  // function Person(name, age) {
+  //   this.name = name;                // 添加name属性
+  //   this.age = age;                  // 添加age属性
+  //   this.sayHello = function () {    // 添加sayHello()方法
+  //     console.log('你好，我是' + this.name);
+  //   };
+  // }
+  // var p1 = new Person('张三', 18);
+  // var p2 = new Person('李四', 19);
+  // console.log(p1);                  // 输出结果：Person {name: "张三", age: 18}
+  // console.log(p2);                  // 输出结果：Person {name: "李四", age: 19}
+  // p1.sayHello();                    // 输出结果：你好，我是 张三
+  // console.log(p1.constructor);      // 输出结果：function Person(name, age) ……
 
 
 
   // 定义类---ES6新增
   class Product {
     //仅属性使用构造函数
-     constructor (id,commodity, price,img) {    // 构造方法
+     constructor (id,title, price,img) {    // 构造方法
       this.id=id;
-      this.commodity = commodity;                  // 添加commodity属性
+      this.title = title;                  // 添加commodity属性
       this.price = price;                    // 添加price属性            // 添加number属性
       this.img=img;
     }
@@ -32,28 +32,88 @@
   // 商品对象/实例
   var product1 = new Product(' 1 ',' 耐克 ', 500  , 'images/01.jpg' );
   var product2=new Product('2','飞机',9.90,'image/02.jpg');
-  // 访问商品对象
-  console.log(product1);   // 输出结果：商品名称： 价格：  数量：  图片地址：
-  console.log(product2);
-  // 形式访问商品对象的属性
-  console.log(product1.id);
-  console.log(product2.id);
-  // 下标形式商品对象
-  console.log(product1['id']);
-  console.log(product2['id']);
-  // 订单类
+  console.log(product1);
+
+  // 订单类-2
   class Order{
     constructor(product,qty){
       this.product=product;
+      this.title=product.title;
+      this.price=product.price;
+      this.img=product.img;
       this.qty=qty;
     }
   }
   // 创建订单对象
   var order1=new Order(product1,5);
-  // 获得订单对象
-  console.log(order1);
-  // 获得订单对象的product属性
-  console.log(order1.product);
   // 获得订单对象的product属性的二级属性title
-  console.log(order1.product.title);
+  // console.log(order1.product.title);
+//  console.log(order1.title);
+
+
+  //购物车数据类--确定格式
+ class CartData{
+   constructor(){
+     this.orderList=new Array();
+     this.units=0;
+     this.totalQty=0;
+     this.totalAmount=0;
+   }
+
+ }
+
+//函数定义---将某个订单order,加入到购物车
+function addtoCart(order){
+
+var isOldProduct=false;//假设isOldProduct是假，代表当前状态是新商品
+for(const i in myCart.orderList){
+  if(order.id==myCart.orderList[i].id){
+     isOldProduct=true;//新近订单的id与购物车中某个商品的id相等，是购物车中已经存在的商品，修改状态
+      // 新增对应aty
+      myCart.orderList[i].qty+=order.qty;
+      break;
+     }
+}
+if(!isOldProduct){ 
+    //order是购物车中的新商品，给样本数++
+  myCart.orderList.push(order);
+  myCart.units++;
+}
+myCart.totalQty=order.qty;
+myCart.totalAmount=order.price*order.qty;
+}
+
+
+
+//  商品对象实例化
+var product1=new Product('01','30巨补水 秋冬新款面膜',99.90,'images/01.jpg');
+var product2=new Product('02','飞机',99.90,'images/02.jpg');
+
+var order=new Order(product1,5);
+//实例化购物车数据--订单1进购物车
+var myCart=new CartData();
+myCart.orderList.push(order);
+myCart.units=1;
+myCart.totalQty=order.qty;
+myCart.totalAmount=order.price*order.qty;
+console.log(myCart);
+
+//订单2进购物车myCart
+// var order2=new Order(product2,4);
+// console.log(order2);
+// myCart.orderList.push(order2);
+// myCart.units=1+1;
+// myCart.totalQt=order2.qty+order1.qty;
+// myCart.totalAmount=order2.price*order2.qty+order1.price*order1.qty;
+// console.log(myCart);
+
+order=new Order(product2,3);
+addtoCart(order);//调用加入购物车函数
+console.log(myCart);
+
+order=new Order(product2,1);
+addtoCart(order);//调用加入购物车函数
+console.log(myCart);
+
+
 </script>
