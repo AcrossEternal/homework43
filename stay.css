@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+h1{
+    margin: auto;
+    font-size: 40px;
+    width: 40%;
+    padding: 10px;
+
+}
+.img{
+    border-radius: 8px;
+}
+
+li{
+    
+    font-size: 18px;
+    color: #333;
+    font-family: "Microsoft YaHei",sans-serif;
+}
