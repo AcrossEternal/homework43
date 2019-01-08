@@ -1,0 +1,239 @@
+*{
+	margin:0;
+	padding: 0;
+}
+body{
+	color: #666;
+    font-family: \5fae\8f6f\96c5\9ed1;
+}
+
+div{
+	display: block;
+}
+
+ul{
+	list-style: none;
+}
+a {
+    color: #666;
+    text-decoration: none;
+}
+/*设计版心区域宽度及版心居中*/
+.w{
+	width: 1210px;
+	margin:  0px auto;
+}
+
+/*公告右区域开始*/
+/*
+设定右区块宽度及右浮动,脱离标准流*/
+.right-extra{
+	width: 989px;
+	float:right;
+}
+
+/*设置右区块边框
+  及右区块内部缩进距离（左右30，上15下0）
+*/
+#detail{
+	border: 1px solid #ebebeb;
+	padding:15px 30px 0;
+	margin-bottom: 10px;
+}
+/*根据子元素内容高度撑父元素高度，清除子元素中的浮动干扰
+ */
+.m ,.mt ,.mc{ 
+	overflow: hidden;
+	zoom:1;
+	}
+
+/*右区块标题区位置处理为相对定位，层级为1，脱离标准流
+为分享区的位置留下参考点 
+*/
+#detail .mt{
+	padding-bottom:2px;
+	position: relative;		
+}
+
+/*右区块公告标题
+通过padding撑开标题区的间距
+字号高度及行高设置标题区的垂直居中
+画出标题下划线 */
+#detail h1{
+	padding: 10px 0 15px;
+	margin-bottom:10px;
+	height: 24px;
+	line-height: 24px;
+	font-size: 20px;
+	text-align: center;
+	border-bottom: 1px solid #ebebeb;
+}
+
+/*绝对定位到父级元素的右下角
+清除子元素浮动
+设置层级
+*/
+#detail .partake{
+	position: absolute;
+    right: 0;
+    bottom: 0;
+    overflow:hidden;
+    zoom:1;
+}
+/*
+设置分享区文字的浮动和行高
+ */
+#detail .partake span {
+    float: left;
+    line-height: 23px;
+}
+
+/*设置分享图标区的超链接
+左浮动，宽高，背景图，
+垂直居中
+清当前区域浮动
+*/
+#detail .partake a {
+    float: left;
+    width: 22px;
+    line-height: 100px;
+    height: 23px;
+    overflow: hidden;
+    background-image: url(https://misc.360buyimg.com/201007/skin/df/i/icon_site.gif);
+    background-repeat: no-repeat;   
+ }
+ /*
+ CSS精灵技术
+ 设置图片的两类状态图片位置
+ 使图片有交互动画效果
+  */
+a#site-qzone:link,a#site-qzone:visited
+ { 	
+    background-position: 0 -24px;
+ }
+
+a#site-qzone:hover, a#site-qzone:active {
+    background-position: 0 0;
+}
+a#site-douban:link, #site-douban:visited {
+    background-position: -24px -24px;
+}
+a#site-douban:hover, a#site-douban:active {
+    background-position: -24px 0;
+}
+
+a#site-renren:link, a#site-renren:visited {
+    background-position: -47px -24px;
+}
+a#site-renren:hover, a#site-renren:active {
+    background-position: -47px 0;
+}
+
+a#site-sina:link, a#site-sina:visited {
+    background-position: -93px -24px;
+}
+a#site-sina:hover, a#site-sina:active {
+    background-position: -93px 0;
+}
+/*
+设置公告摘要区居中对齐
+ */
+#detail .summary {
+    text-align: center;
+    color: #999;
+}
+/*
+设置公告内容区间隔和字号及两倍行距
+ */
+#detail .mc {
+    padding: 30px 10px;
+    font-size: 14px;
+    line-height: 2em;
+}
+/*公告右区域结束*/
+
+/*品牌旗舰区域开始*/
+/*设置右区域宽度及左浮动*/
+.left {
+    float: left;
+    width: 211px;
+}
+/*设置当前区域为相对定位
+溢出可见
+边框
+*/
+#brand {
+    position: relative;
+    overflow: visible;
+    border: 1px solid #ddd;
+}
+
+.m{
+	margin-bottom: 10px;
+}
+
+/*设置品牌旗舰标题区高度
+溢出可见
+*/
+#brand .mt {
+    height: 30px;
+    background: #f7f7f7;
+    overflow: visible;
+}
+/*设置品牌旗舰标题区文字级别
+行高及高度
+左间隔
+*/
+#brand h2 {
+    height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
+}
+
+h2, h3 {
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+/*设置品牌区列表格式
+宽度间隔
+清除子元素浮动
+*/
+#brand ul {
+    overflow: hidden;
+    width: 199px;
+    padding: 10px 0 10px 10px;
+    zoom: 1;
+}
+/*设置品牌区列表项格式
+宽度间隔
+框线
+*/
+#brand li {
+    float: left;
+    overflow: hidden;
+    width: 88px;
+    height: 31px;
+    border-bottom: 1px dotted #ddd;
+    padding: 4px 8px 4px 0;
+}
+
+/*设置更多区间隔，对齐*/
+#brand .mc .extra {
+    padding: 5px 8px;
+    text-align: right;
+}
+/*设置更多区超链接颜色*/
+#brand .mc .extra a {
+    color: #005aa0;
+    font-size: 12px;
+}
+/*清除浮动墙*/
+.clr {
+    display: block;
+    overflow: hidden;
+    clear: both;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+}
