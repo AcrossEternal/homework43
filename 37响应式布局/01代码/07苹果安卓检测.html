@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>苹果安卓检测</title>
+	<style>
+	div{
+		font-size: 40px;
+	}
+	</style>
+	<script src="device.min.js"></script>
+	<script>
+	window.onload=function(){
+		if( device.android() ){
+			document.getElementById('box').innerHTML = '您的系统为安卓';
+		} else if( device.ios() ){
+			document.getElementById('box').innerHTML = '您的系统为ios';
+		}
+	}
+	</script>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+</html>

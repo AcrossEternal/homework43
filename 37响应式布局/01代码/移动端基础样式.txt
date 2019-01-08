@@ -1,0 +1,15 @@
+﻿/* 禁用iPhone中Safari的字号自动调整 */
+html {
+    -webkit-text-size-adjust:100%;
+    -ms-text-size-adjust: 100%;
+}
+/* 设置图片视频等自适应调整 */
+img {
+max-width: 100%;
+height: auto;
+width: auto; /* ie8 */
+}
+video embed, video object, video iframe {
+width: 100%;
+height: auto;
+}
