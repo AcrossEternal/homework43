@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>检测设备</title>
+	<style>
+	div{
+		font-size:40px;
+	}
+	</style>
+	<script src="device.min.js"></script>
+	<script>
+	window.onload=function(){
+		//调用device.js中的mobile函数判断当前是不是移动端，
+		if( device.mobile() ){
+			document.getElementById('box').innerHTML = '当前的设备为移动端';
+			
+		}else{
+			document.getElementById('box').innerHTML = '当前的设备为pc端';
+		}
+	}
+	</script>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+</html>

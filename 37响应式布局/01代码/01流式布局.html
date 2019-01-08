@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>流式布局</title>
+	<style>
+	header{
+		width: 80%;
+		min-width: 300px;
+		max-width: 800px;
+		height: 300px;
+		background:pink;
+		margin:100px auto;
+	}
+	section{
+		width: 33.3333%;
+		height: 300px;
+		float:left;
+		background: purple;
+	}
+	section:first-child{
+		background: lightgreen;
+	}
+	section:last-child{
+		background: orange;
+	}
+	</style>
+</head>
+<body>
+	<header>
+		<section></section>
+		<section></section>
+		<section></section>
+	</header>
+</body>
+</html>
