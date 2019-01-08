@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>表单</title>
+</head>
+
+<body>
+<form action="" method="" name="myForm">
+	用户名:<input type="text" name="username" value="请输入用户名" maxlength="4" size="50" disabled="disabled" /><br/><br/>
+    密码:<input type="password" name="password" /><br/><br/>
+    性别:<label><input type="radio" name="gender" value="male"  />男</label>
+    	<input type="radio" name="gender" value="female" id="nv" /><label for="nv">女</label><br/><br/>
+   	兴趣:<input type="checkbox" name="interest" value="sing" />唱歌
+    	<input type="checkbox" name="interest" value="dance" />跳舞
+        <input type="checkbox" name="interest" value="敲代码" checked="checked" />敲代码<br/><br/>
+   
+    上传头像:<input type="file" name="pic" /><br/><br/>
+    城市:<select name="city">
+    		<option value="">-请选择城市-</option>
+    		<option value="bj">北京</option>
+            <option value="sh">上海</option>
+            <option value="gz">广州</option>
+    	 </select><br/><br/>
+   	自我介绍:<br/>
+    	 <textarea cols="30" rows="10"></textarea><br/><br/>
+    	 <input type="submit" value="我是提交按钮"/>
+         <input type="reset" value="我可以重置内容" />
+         <input type="button" value="我是普通按钮" />
+         <input type="image" src="an-0336.gif" />
+</form>
+</body>
+</html>
